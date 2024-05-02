@@ -1,18 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
+:root{
+  --container-size : 940px;
+}
+/* :선택자 -> 유사 클래스, 유사 요소, 슈도 클래스, 슈도 엘리먼트 (콜론이 붙은 선택자) */
+/* css에서 변수 만드는 거 : -- (더블대쉬) */
 body {
   font-family: "Noto Sans KR", sans-serif;
 }
-
+.header, .visual, .main, .slogan, .footer{
+  width: var(--container-size, 940px);
+  margin : 0 auto;
+}
 /* 헤더 */
 .header{
   background-color: yellow;
-  width: 940px;
+  /* margin : 50px 50px 50px auto; -> 시계방향으로 돌아서 top 50 오른쪽 50 아래쪽 50 왼쪽에 남은 거 몽땅 */
+  /* height: 100px; */
+  /* width = inline-size */
 }
 /* 비주얼 */
 .visual{
   background-color: pink;
-  inline-size: 940px;
+  /* inline-size: 940px; */
+  /* 해외는 width보다는 inline 속성 더 많이 쓴다고 함. */
+  /* block-size: 100px; */
+  /* block-size = heigth */
+
 }
 /* 메인 콘텐츠 */
 .main{
