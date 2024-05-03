@@ -128,6 +128,13 @@ background-color: orange;
     /* flex-flow : row nowrap => 행방향, 줄바꿈 허용 x */
     justify-content: space-between;
   }
+
+  .group:nth-child(n+2){
+    margin-left: 0;}
+
+  .group3 {
+    order: -1;
+  }
 }
 
 /* flex를 지원하는 중괄호의 코드를 실행하겠다 */
