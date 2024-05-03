@@ -19,14 +19,25 @@ body {
 
 /* 헤더 */
 .header{
-  background-color: yellow;
-  height: 10vh;
+  background-color: darkblue;
+  height: 120px;
   padding: 0 50px; 
+  border-radius: 0 0 15px 15px;
+  position : relative;
   /* margin : 50px 50px 50px auto; -> 시계방향으로 돌아서 top 50 오른쪽 50 아래쪽 50 왼쪽에 남은 거 몽땅 */
   /* height: 100px; */
   /* width = inline-size */
   /* vh : viewpoing height */
 }
+/* 로고 */
+.logo {
+  background-color: orange;
+  position: absolute;
+  top: 45px;
+  left: 60px;
+}
+
+
 /* 비주얼 */
 .visual{
   background-color: pink;

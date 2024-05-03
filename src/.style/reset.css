@@ -19,6 +19,7 @@ html{
 *,*::before,*::after{
   box-sizing:inherit
 }
+/* *: 모두 선택  */
 img,video{
   height:auto;
   max-width:100%
