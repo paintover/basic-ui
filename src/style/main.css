@@ -7,6 +7,7 @@
 /* css에서 변수 만드는 거 : -- (더블대쉬) */
 /* 콜백 변수 */
 
+
 body {
   font-family: "Noto Sans KR", sans-serif;
 }
@@ -20,6 +21,7 @@ body {
 .header{
   background-color: yellow;
   height: 10vh;
+  padding: 0 50px; 
   /* margin : 50px 50px 50px auto; -> 시계방향으로 돌아서 top 50 오른쪽 50 아래쪽 50 왼쪽에 남은 거 몽땅 */
   /* height: 100px; */
   /* width = inline-size */
@@ -37,29 +39,75 @@ body {
 /* 메인 콘텐츠 */
 .main{
   background-color: skyblue;
-  height: 60vh;
-  display: flex;
-  flex-flow: row / nowrap;
-  justify-content: flex-start; 
+  display: flow-root;
+  min-height: 450px;
+  padding : 28px 15px 36px;
+
+  /* height: 60vh; */
+  /* display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between; 
   align-items: stretch;
+  padding: 28px 16px 36px; */
   /* 방향과 줄바꿈 바꿀 수 있는 속성 -> 그걸 한꺼번에 선언할 수 있는 속성 flex-flow */
   /* row : 행 nowrap : 줄바꿈 놉 */
   /* flex container만 가질 수 있는 속성 */
   /* direction에 따라 메인축, 교차축이 달라짐 / row : x, y / column : y, x */
-  /* justify-content: 메인축 정렬; */
-  /* align-items: 교차축 정렬 (stretch가 기본값) ; */
+/* 교차축 정렬 (stretch가 기본값) ; */ 
+}
+
+/* .group-wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+} */
+
+.group-wrapper {
+  float: right;
 }
 
 .group{
   border: 1px solid red;
+  float: left;
+}
+
+.group:nth-child(n+2){
+  margin-left: 44px;
+}
+
+/* 구조선택자 
+.main .group:nth-child(-n+2){
+  margin-right: 60px;
+} */
+/* .group:nth-child(1) */
+
+.group1{
+width: 250px;
+/* float: left; */
+background-color: orange;
+}
+
+
+.group2 {
+  width : 380px;
+  /* float: left; */
+  background-color: silver;
+}
+
+.group3 {
+  width : 190px;
+  /* float: left; */
+  background-color: hotpink;
 }
 
 /* display 속성 (정말정말정말 중요) -> 화면에 lendering하는 방법을 보여줌
 -> display:flex; 하니까  */
+
 /*슬로건  */
 .slogan{
   background-color: lime;
   height: 10vh;
+  clear: both;
 }
 /* 푸터 */
 .footer{
@@ -70,3 +118,16 @@ body {
   background-color: yellow;
   height: 10vh;
 }
+
+/*********** flex를 지원하는 웹브라우저를 위한 스타일 **********/
+
+@supports (display: flex){
+  .main{
+    display: flex;
+    flex-flow: row nowrap;
+    /* flex-flow : row nowrap => 행방향, 줄바꿈 허용 x */
+    justify-content: space-between;
+  }
+}
+
+/* flex를 지원하는 중괄호의 코드를 실행하겠다 */
