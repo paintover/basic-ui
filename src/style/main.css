@@ -1,34 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 
-:root{
-  --container-size : 940px;
+:root {
+  --container-size: 940px;
 }
-/* :선택자 -> 유사 클래스, 유사 요소, 슈도 클래스, 슈도 엘리먼트 (콜론이 붙은 선택자) */
-/* css에서 변수 만드는 거 : -- (더블대쉬) */
-/* 콜백 변수 */
-
 
 body {
   font-family: "Noto Sans KR", sans-serif;
 }
-.header, .visual, .main, .slogan, .footer-inner{
+
+.header,
+.visual,
+.main,
+.slogan,
+.footer-inner {
   width: var(--container-size, 940px);
-  margin : 0 auto;
+  margin: 0 auto;
 }
-/* width: var(--container-size, 940px); -> container size가 안되면, 940px로 적용 */
 
 /* 헤더 */
-.header{
+.header {
   background-color: darkblue;
   height: 120px;
-  padding: 0 50px; 
+  padding: 0 50px;
   border-radius: 0 0 15px 15px;
-  position : relative;
-  /* margin : 50px 50px 50px auto; -> 시계방향으로 돌아서 top 50 오른쪽 50 아래쪽 50 왼쪽에 남은 거 몽땅 */
-  /* height: 100px; */
-  /* width = inline-size */
-  /* vh : viewpoing height */
+  position: relative;
 }
+
 /* 로고 */
 .logo {
   background-color: orange;
@@ -37,161 +34,75 @@ body {
   left: 60px;
 }
 
-
 /* 비주얼 */
-.visual{
+.visual {
   background-color: pink;
   height: 10vh;
-  /* inline-size: 940px; */
-  /* 해외는 width보다는 inline 속성 더 많이 쓴다고 함. */
-  /* block-size: 100px; */
-  /* block-size = heigth */
 }
 /* 메인 콘텐츠 */
-.main{
+.main {
   background-color: skyblue;
   display: flow-root;
   min-height: 450px;
-  padding : 28px 15px 36px;
-
-  /* height: 60vh; */
-  /* display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between; 
-  align-items: stretch;
-  padding: 28px 16px 36px; */
-  /* 방향과 줄바꿈 바꿀 수 있는 속성 -> 그걸 한꺼번에 선언할 수 있는 속성 flex-flow */
-  /* row : 행 nowrap : 줄바꿈 놉 */
-  /* flex container만 가질 수 있는 속성 */
-  /* direction에 따라 메인축, 교차축이 달라짐 / row : x, y / column : y, x */
-/* 교차축 정렬 (stretch가 기본값) ; */ 
+  padding: 28px 16px 36px;
 }
 
-/* .group-wrapper{
-  display: flex;
-  flex-flow: row nowrap;
-  margin: 0 auto;
-} */
-
-.group-wrapper {
-  float: right;
-}
-
-.group{
+.group {
   border: 1px solid red;
   float: left;
 }
 
-.group:nth-child(n+2){
+.group:nth-child(n + 2) {
   margin-left: 44px;
 }
 
-/* 구조선택자 
-.main .group:nth-child(-n+2){
-  margin-right: 60px;
-} */
-/* .group:nth-child(1) */
-
-.group1{
-width: 250px;
-/* float: left; */
-background-color: orange;
+.group1 {
+  width: 250px;
+  background-color: orange;
 }
 
-
 .group2 {
-  width : 380px;
-  /* float: left; */
-  background-color: silver;
+  width: 380px;
+  background: silver;
 }
 
 .group3 {
-  width : 190px;
-  /* float: left; */
-  background-color: hotpink;
+  background: hotpink;
+  width: 190px;
 }
 
-/* display 속성 (정말정말정말 중요) -> 화면에 lendering하는 방법을 보여줌
--> display:flex; 하니까  */
-
-/*슬로건  */
-.slogan{
+/* 슬로건 */
+.slogan {
   background-color: lime;
   height: 10vh;
   clear: both;
 }
 /* 푸터 */
-.footer{
+.footer {
   background-color: orange;
 }
 
-.footer-inner{
-  background-color: yellow;
+.footer-inner {
+  background: yellow;
   height: 10vh;
 }
 
-/*********** flex를 지원하는 웹브라우저를 위한 스타일 **********/
+/* -------------------------------------------------------------------------- */
+/*                          flex를 지원하는 웹브라우저를 위한 스타일                   */
+/* -------------------------------------------------------------------------- */
 
-@supports (display: flex){
-  .main{
+@supports (display: flex) {
+  .main {
     display: flex;
     flex-flow: row nowrap;
-    /* flex-flow : row nowrap => 행방향, 줄바꿈 허용 x */
     justify-content: space-between;
   }
 
-  .group:nth-child(n+2){
-    margin-left: 0;}
+  .group:nth-child(n + 2) {
+    margin-left: 0;
+  }
 
   .group3 {
     order: -1;
   }
 }
-
-/* flex를 지원하는 중괄호의 코드를 실행하겠다 */
-
-<!DOCTYPE html>
-<html lang="ko">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="avatars.css" />
-  <title>first homework</title>
-</head>
-
-<body>
-  <div class="group" role="group" aria-label="모든 회원의 이미지를 담은 그룹">
-    <div class="woman" role="group" aria-label="여성 회원">
-
-      <img src="../images/images/faces/face1.jpg" class="no1" alt="첫 번째 여자 이미지" />
-      <img src="../images/images/faces/face2.jpg" class="no2" alt="두 번째 여자 이미지" />
-      <img src="../images/images/faces/face3.jpg" class="no3" alt="세 번째 여자 이미지" />
-      <img src="../images/images/faces/face4.jpg" class="no4" alt="네 번째 여자 이미지" />
-
-
-      <section class="woman-circle" role="group" aria-label="여성 회원의 on/off 상태를 나타내는 원 모양의 도형">
-        <div class="circle no1" aria-label="첫 번째 여성 회원의 on,off 상태"></div>
-        <div class="circle no2" aria-label="두 번째 여성 회원의 on,off 상태"></div>
-        <div class="circle no3" aria-label="세 번째 여성 회원의 on,off 상태"></div>
-        <div class="circle no4" aria-label="네 번째 여성 회원의 on,off 상태"></div>
-      </section>
-    </div>
-
-    <div class="man" role="group" aria-label="남성 회원">
-      <img src="../images/images/faces/face7.jpg" class="no1" alt="첫 번째 남자 이미지" />
-      <img src="../images/images/faces/face5.jpg" class="no1" alt="두 번째 남자 이미지" />
-      <img src="../images/images/faces/face6.jpg" class="no3" alt="세 번째 남자 이미지" />
-      <img src="../images/images/faces/face8.jpg" class="no4" alt="네 번째 남자 이미지" />
-
-      <section class="man-circle" role="group" aria-label="남성 회원의 on,off 상태를 나타내는 원 모양의 도형">
-        <div class="circle no7" aria-label="첫 번째 남성 회원의 on,off 상태"></div>
-        <div class="circle no5" aria-label="두 번째 남성 회원의 on,off 상태"></div>
-        <div class="circle no6" aria-label="세 번째 남성 회원의 on,off 상태"></div>
-        <div class="circle no8" aria-label="네 번째 남성 회원의 on,off 상태"></div>
-      </section>
-    </div>
-  </div>
-</body>
-
-</html>
