@@ -50,17 +50,20 @@ body {
 @keyframes moveEffect{
   0%{
     font-size: 12px;
-    top: 0;
-    inset-block-start: 0;
-    left: 0;
-    inset-inline-start: 0;
+    translate: 0 0;
   }
   100%{
     font-size: 24px;
-    top: 75px;
-    inset-block-start: 75px;
-    left: 400px;
-    inset-inline-start: 400px;
+    translate: 320px 75px;
+  }
+}
+
+@keyframes fadeEffect{
+  0%{
+  opacity: 1;
+  }
+  100%{
+  opacity: 0;
   }
 }
 /* 키프레임은 호출하지 않으면 실행되지 않음 */
@@ -69,17 +72,23 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   animation-name: moveEffect;
   animation-duration: 5s;
-  animation-fill-mode: forwards; /*커진 상태로 멈춰있는 속성*/
-  position:absolute;
+  animation-fill-mode: forwards; /*애니메이션이 적용되어 있는 상태로 유지하는 속성*/
+  display: inline-block;
   z-index: 1;
+  position: relative;
 }
 
 .visual {
+  border: 1px solid transparent; 
   height: 120px;
   block-size: 120px;
   position: relative;
 
 &::before, &::after{
+  animation-name: fadeEffect;
+  animation-duration: 4s;
+  animation-iteration-count: infinite; /*무한반복*/
+  animation-direction: alternate; /*불투명 투명 투명 불투명 왔다갔다*/
   content: "";
   width: inherit;
   inline-size: inherit;
@@ -105,6 +114,7 @@ body {
   /* 포지션일 때, 그렇게 인식함 */
   background-image: url(/src/images/ani_flower_03.png), url(/src/images/ani_flower_04.png);
   background-position: 300px 0, 800px 30px;
+  animation-delay: 2s; /*딜레이해서 나타나게 만듦*/
 }
 
 /* 메인 콘텐츠 */
