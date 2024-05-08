@@ -1,0 +1,32 @@
+.box{
+  width: 500px;
+  height: 100px;
+  inline-size: 500px;
+  block-size: 100px;
+  border: 20px dashed blue;
+  padding: 20px;
+  margin: 50px;
+  /* background-color: pink;
+  background-image: url(./../../images/coffee.png);
+  background-repeat: no-repeat;
+  background-position: 20% 30%;
+  background-size: 110px 83px;
+  background-attachment: fixed; */
+  background: pink url(./../../images/coffee.png) no-repeat 20% 30% /110px 83px scroll;
+}
+
+/* 상대경로, 절대경로 */
+/* /images/coffee.png */
+
+.container{
+  width: 600px;
+  height: 300px;
+  inline-size: 600px;
+  block-size: 300px;
+  border: 1px solid red;
+  /* background-color: yellow;
+  background-image: url(/src/images/ani_flower_01.png), url(/src/images/ani_flower_02.png);
+  background-repeat: no-repeat; */
+
+  
+}

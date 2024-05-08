@@ -1,0 +1,20 @@
+.sr-only {
+  background-color: yellow;
+  position: absolute;
+  clip: rect(0,0,0,0);
+  width: 1px;
+  height: 1px;
+  /* inline-size: 1px;
+  block-size: 1px; */
+
+  top: -9999px; 
+  /* 안드로메다로 보내기 */
+  /* inset-block-start: -9999px; */
+
+  overflow: hidden;
+  margin: -1px;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+}
