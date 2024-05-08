@@ -16,14 +16,14 @@
 /* 그라디언트 배경, 배경 이미지 */
 body {
   margin: 0;
-  line-height: 1;
-   font-family: "SUIT Variable", sans-serif;
-   background-color: #ccc;
-   background-image: url(/src/images/bg_flower.png), linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
-   /* 먼저 선언한 이미지가 위로 올라와서 url 이미지가 안 보이는 거 */
-   background-repeat: no-repeat;
-   background-position: 50% 0, 0 0;
-   margin: 0;
+  line-height: 1.15;
+  font-family: "SUIT Variable", sans-serif;
+  background-color: #ccc;
+  background-image: url(/src/images/bg_flower.png), linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
+  /* 먼저 선언한 이미지가 위로 올라와서 url 이미지가 안 보이는 거 */
+  background-repeat: no-repeat;
+  background-position: 50% 0, 0 0;
+  margin: 0;
 }
 
 .header,
@@ -35,8 +35,9 @@ body {
   margin: 0 auto;
 }
 
+
 /* 헤더 */
-.header {
+.header{
   background-color: var(--primary);
   height: 120px;
   padding: 0 28px;
@@ -61,7 +62,6 @@ body {
 }
 
 /* 텍스트 링크 모음 */
-/* 컴포넌트 */
 .member-service {
   --spacing: 8px;
 
@@ -148,7 +148,7 @@ body {
   /* z-index: 1; */
   background-image: url(/src/images/ani_flower_01.png), url(/src/images/ani_flower_02.png);
   background-position: 0 -10px, 600px 10px;
-  /* z-index : 양수 -> 순서바꾸기 */
+  /* z-index : 양수 -> 맨 앞으로 순서바꾸기 */
   /* 가급적 이미지 에셋을 자를 때는, 여백을 포함하지 않는 게 좋음 */
 }
 

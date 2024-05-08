@@ -12,7 +12,7 @@
   background-position: 20% 30%;
   background-size: 110px 83px;
   background-attachment: fixed; */
-  background: pink url(./../../images/coffee.png) no-repeat 20% 30% /110px 83px scroll;
+  background: pink url(/src/images/coffee.png) no-repeat 20% 30% /110px 83px scroll;
 }
 
 /* 상대경로, 절대경로 */
