@@ -1,5 +1,5 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap"); */
-@import url(./theme.css);
+@import url(/style/theme.css);
 
 :root {
   --container-size: 940px;
@@ -19,7 +19,7 @@ body {
   line-height: 1.15;
   font-family: "SUIT Variable", sans-serif;
   background-color: #ccc;
-  background-image: url(/src/images/bg_flower.png), linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
+  background-image: url(/images/bg_flower.png), linear-gradient(to bottom, #aaa 0%, #ccc 30%, #eee 50%, #fff 100%);
   /* 먼저 선언한 이미지가 위로 올라와서 url 이미지가 안 보이는 거 */
   background-repeat: no-repeat;
   background-position: 50% 0, 0 0;
@@ -149,7 +149,7 @@ body {
 
 .visual::before{
   /* z-index: 1; */
-  background-image: url(/src/images/ani_flower_01.png), url(/src/images/ani_flower_02.png);
+  background-image: url(/images/ani_flower_01.png), url(/images/ani_flower_02.png);
   background-position: 0 -10px, 600px 10px;
   /* z-index : 양수 -> 맨 앞으로 순서바꾸기 */
   /* 가급적 이미지 에셋을 자를 때는, 여백을 포함하지 않는 게 좋음 */
@@ -158,7 +158,7 @@ body {
 .visual::after{
   /* 더 나중에 마크업되기 때문에 비포보다 위에 있다고 인식 */
   /* 포지션일 때, 그렇게 인식함 */
-  background-image: url(/src/images/ani_flower_03.png), url(/src/images/ani_flower_04.png);
+  background-image: url(/images/ani_flower_03.png), url(/images/ani_flower_04.png);
   background-position: 300px 0, 800px 30px;
   animation-delay: 2s; /*딜레이해서 나타나게 만듦*/
 }

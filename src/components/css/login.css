@@ -1,8 +1,11 @@
-@import url(../../style/theme.css); 
-@import url(../../style/reset.css);
-/* @import url(/src/style/theme.css); -> Q. 컨트롤 클릭하면 넘어가는데 왜 절대경로가 안 먹지? -> 왜 또 갑자기 되냐 일단 상대경로 주석 처리 -> 봐바 또 안 먹음
-돼도 개발자도구에서 보면 오류나*/ 
-@import url(../../style/base.css);
+@import url(/style/reset.css);
+
+/* @import url(../../style/theme.css);  */
+@import url(/style/theme.css); 
+/*-> Q. 컨트롤 클릭하면 넘어가는데 왜 절대경로가 안 먹지? -> 왜 또 갑자기 되냐 일단 상대경로 주석 처리 -> 봐바 또 안 먹음 ->
+돼도 개발자도구에서 보면 오류나 */ 
+
+@import url(/style/base.css);
 
 /* input 컴포넌트 */
 .form-input{
