@@ -1,24 +1,104 @@
-@import url(/style/theme.css);
+/* @import url(/src/style/theme.css); Q. 컨트롤 클릭하면 넘어가는데 왜 절댇경로가 안 먹지?*/
+@import url(../../style/reset.css);
+@import url(../../style/theme.css);
+@import url(../../style/base.css);
 
-/* 기본 글꼴 */
-:root{
-  --base-font-famaily: "SUIT Variable", sans-serif; 
-} 
-
-body{
-  font-family: var(--base-font-family);
-}
-
+/* 스타일 초기화 */
 
 /* 로그인 */
 .login{
+  width: 500px;
+  inline-size: 500px;
 
   --box-start-color: var(--orange-100);
   --box-end-color: var(--orange-200);
+  --box-shadow-color: var(--gray-700);
 
   background-image: radial-gradient(circle at right top, var(--box-start-color), var(--box-end-color)); /*원형그라디언트*/
   border-radius: 5px;
   padding: 10px;
-  box-shadow: 0 0 0 0 black; /*그림자*/
+  box-shadow: 5px 5px 0 0 var(--gray-700); /*그림자 3:blurr, 4: spread*/
 }
 
+  .login-title{
+    --color: var(--yellow);
+
+    color: var(--yellow);
+    margin: 0;
+    font-size: 0.9375rem;
+  }
+
+.login-form{
+  /* .user-email{
+    /* display: inline-block;
+    width: 138px; */
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+
+    fieldset{
+      border: 0;
+      margin: 0;
+      padding: 0;
+      height: 70px;
+      position: relative;
+      border-bottom: 1px solid #ccc;
+    }
+
+    div{
+      margin-bottom: 5px;
+    }
+
+    label{
+      display: inline-block;
+      width: 4em; /*4em? 누가 부모태그야? -> font-size */
+      inline-size: 4em;
+    }
+
+    input{
+      width: calc(100% - 145px);
+      border: 1px solid #aaa;
+      border-radius: 3px;
+      padding: 1px 1px 1px 8px;
+      height: 24px;
+    }
+  }
+
+/* 
+  .form-input:focus-within{
+    border-bottom: 1px solid red;
+  } 
+  자식 중에 누군가 focus를 받으면~ 
+  - 보더나 패딩이나 마진은 박스모델에 영향을 줘서 ui가 밀리거나 당기는 경우가 발생됨
+  */
+
+
+.login-button{
+  border: 0;
+  padding: 16px 10px;
+  background-color: var(--orange-200);
+  color: #fff;
+  border-radius: 5px;
+  position: absolute; /*영역 차지 안해*/
+  top: 0;
+  inset-block-start: 0;
+  right: 0;
+  inset-inline-end: 0;
+}
+
+.member-sign{
+  background-color: #fff;
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
+}
