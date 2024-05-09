@@ -7,7 +7,9 @@ body {
 /* 320px 이상 640px 이하 */
 /* 모바일에만 적용되는 코드 */
 @media (min-width: 320px) and (max-width:640px){
-
+& {
+  background-color: orange;
+}
 }
 
 /* 640px 이상 디바이스 */

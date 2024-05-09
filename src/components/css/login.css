@@ -1,104 +1,136 @@
-/* @import url(/src/style/theme.css); Q. 컨트롤 클릭하면 넘어가는데 왜 절댇경로가 안 먹지?*/
+@import url(../../style/theme.css); 
 @import url(../../style/reset.css);
-@import url(../../style/theme.css);
+/* @import url(/src/style/theme.css); -> Q. 컨트롤 클릭하면 넘어가는데 왜 절대경로가 안 먹지? -> 왜 또 갑자기 되냐 일단 상대경로 주석 처리 -> 봐바 또 안 먹음
+돼도 개발자도구에서 보면 오류나*/ 
 @import url(../../style/base.css);
 
-/* 스타일 초기화 */
+/* input 컴포넌트 */
+.form-input{
+  --spacing: 10px;
+  --border-color: var(--gray-500);
+  --radius: 3px;
+  border-bottom: 1px solid #fff;
+
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--spacing);
+  align-items: center; /*수직방향으로 정렬하기 -> flex 속성 중 하나*/
+
+  label{
+    white-space: nowrap; /*텍스트가 길어서 넘어가더라도 자동 줄바꿈 일어나지 말라고*/
+  }
+
+  input{
+    flex-grow:1;
+    /* border: 1px solid var(--border-color) */
+    border: 0;
+    border-radius: var(--radius);
+    padding: 1px 1px 1px 8px;
+    height: 24px;
+    block-size: 24px;
+    width: 100%  /* 이걸 줘야만, 부모의 width를 상속받을 수 있어. 이걸 안 쓰고 flex-grow로 늘려버리면 부모컨테이너는 가만히 있고 야이만 늘어나. */
+  }
+
+  input:focus{
+    outline: 0;
+  }
+
+  &:focus-within{
+    border-bottom-color:red;
+    /* 자식 중에 누군가 focus를 받으면 이 부모컨테이너 하단의 border의 색상을 red로 만들어라. */
+  }
+}
+
+
+/* button 컴포넌트 */
+.button {
+  --bg-color: var(--orange-200);
+  --color: var(--white);
+  --radius: 3px;
+
+  border:0;
+  padding: 16px 10px;
+  background-color: var(--bg-color);
+  color: var(--color);
+  border-radius: var(--radius);
+  white-space: nowrap;
+}
+
+/* 링크 텍스트 컴포넌트 (아이콘 유형) */
+.icon-link{
+  --color: var(--orange-200);
+
+  [class*='fas']{
+    color: var(--color); /*button 컴포넌트에서 선언해준 변수인가?*/
+    padding-right: 0.25em;
+    padding-inline-end: 0.25em;
+  }
+}
 
 /* 로그인 */
 .login{
-  width: 500px;
-  inline-size: 500px;
+  /* 로그인 변수 */
+  --start-color: var(--orange-100);
+  --end-color: var(--orange-200);
+  --shadow-color: var(-gray-700);
+  --spacing: 10px;
+  --radius: 5px;
+  --shadow-depth: 5px;
+  --bg-color: var(--white);
+  --border-color: var(--gray-500);
 
-  --box-start-color: var(--orange-100);
-  --box-end-color: var(--orange-200);
-  --box-shadow-color: var(--gray-700);
+  background-image: radial-gradient(circle at right top, var(--start-color), var(--end-color));
+  border-radius: var(--radius);
+  padding: var(--spacing);
+  box-shadow: var(--shadow-depth) var(--shadow-depth) 0 0 var(--shadow-color); /*box-shadow : x y 블러 크기 색상 */
 
-  background-image: radial-gradient(circle at right top, var(--box-start-color), var(--box-end-color)); /*원형그라디언트*/
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 5px 5px 0 0 var(--gray-700); /*그림자 3:blurr, 4: spread*/
-}
+  /* 로그인 제목 */
+  .login-title {
+    --color:var(--yellow);
 
-  .login-title{
-    --color: var(--yellow);
-
-    color: var(--yellow);
+    color: var(--color);
     margin: 0;
     font-size: 0.9375rem;
   }
 
-.login-form{
-  /* .user-email{
-    /* display: inline-block;
-    width: 138px; */
-    margin-top: 20px;
-    background-color: #fff;
-    border-radius: 5px 5px 0 0;
-    padding: 10px;
+  /* 로그인 폼 */
+  .login-form {
+    margin-top: var(--spacing);
+    margin-block-start: var(--spacing);
+    background-color: var(--bg-color);
+    border-radius: var(--radius) var(--radius) 0 0; /*왜지? 왜 위에만 모서리 둥글게 처리했지?*/
+    padding: var(--spacing);
 
     fieldset{
-      border: 0;
-      margin: 0;
-      padding: 0;
-      height: 70px;
-      position: relative;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid var(--border-color); 
+      display: flex; /*왜 여기에 display:flex 줬지? 이거 주면 아이디랑 비밀번호도 다 가로정렬되지 않나? 아이디랑 비밀번호는 세로나열 되어야 하잖아*/
+      flex-flow: row nowrap;
+      gap: var(--spacing);
+      padding-bottom: var(--spacing);
+      padding-block-end: var(--spacing);
     }
+    /*왜 login-form에다가 안 주고 굳이 fieldset을 만든거지?*/
 
-    div{
-      margin-bottom: 5px;
-    }
+    .login-input-group{
+      flex-grow: 1;
+      display: flex;
+      flex-flow: column nowrap;
+      gap: var(--spacing);
 
-    label{
-      display: inline-block;
-      width: 4em; /*4em? 누가 부모태그야? -> font-size */
-      inline-size: 4em;
-    }
-
-    input{
-      width: calc(100% - 145px);
-      border: 1px solid #aaa;
-      border-radius: 3px;
-      padding: 1px 1px 1px 8px;
-      height: 24px;
+      label{
+        min-width: 4em;
+        min-inline-size: 4em;
+      }
     }
   }
 
-/* 
-  .form-input:focus-within{
-    border-bottom: 1px solid red;
-  } 
-  자식 중에 누군가 focus를 받으면~ 
-  - 보더나 패딩이나 마진은 박스모델에 영향을 줘서 ui가 밀리거나 당기는 경우가 발생됨
-  */
-
-
-.login-button{
-  border: 0;
-  padding: 16px 10px;
-  background-color: var(--orange-200);
-  color: #fff;
-  border-radius: 5px;
-  position: absolute; /*영역 차지 안해*/
-  top: 0;
-  inset-block-start: 0;
-  right: 0;
-  inset-inline-end: 0;
-}
-
-.member-sign{
-  background-color: #fff;
-  margin: 0;
-  padding: 10px;
-  list-style: none;
-  border-radius: 0 0 5px 5px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-
-  a{
-    color: inherit;
-    text-decoration: none;
+  /* 멤버 서비스 관련 링크 */
+  .member-sign{
+    background-color: var(--bg-color);
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 0 var(--spacing) var(--spacing) var(--spacing);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
   }
 }
