@@ -1,7 +1,6 @@
 {
   "scripts": {
     "dev": "five-server"
-    "clean" : "rm -rf"
   },
   "devDependencies": {
     "five-server": "^0.3.3"
