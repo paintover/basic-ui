@@ -1,0 +1,9 @@
+.box {
+  border: 1px solid black;
+  position: relative;
+}
+
+.box2 {
+  border: 1px solid green;
+  position: absolute;
+}
