@@ -1,0 +1,46 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+body{
+  margin: 50px;
+}
+
+.menu{
+  background: orangered linear-gradient(to bottom, orange, orangered, orange);
+  box-shadow: 0 -5px 0 0 #121212; /*색 안 주면 글자색 읽음*/
+  color: #f5f5f6;
+  display: flow-root;
+  padding-left: 255px;
+  padding-inline-start: 255px;
+
+  /* li{
+    float: left; } /*서브메뉴도 같이 가로로 배열됨. ******복습*******/
+  
+  > li{
+    float:left; /*서브메뉴는 그대로 세로******복습********/
+    border-left: 2px solid #fff; /*버튼에다가 선이 있으면 클릭될 수가 있음. 그래서 li에 넣음*/
+  }
+
+  button{
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 0 24px;
+    height: 60px;
+    line-height: 60px; /*버튼이 아니라 span 요소라면 이걸 줘야 가운데로 온 것처럼 보임*/
+    background: transparent;
+    border: 0;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000 , 2px 2px 0 #000,  3px 3px 0 #000,  4px 4px 0 #000; 
+    /*depth가 깊은 그림자*/
+    /* text-shadow: 1px 1px 0 #000 , -1px -1px 0 #000;  */
+    /* 윤곽효과 */
+  }
+  
+  ul{
+    display: none;
+  }
+
+  
+}
+
