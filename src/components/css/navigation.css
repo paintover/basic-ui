@@ -9,7 +9,7 @@ body{
 .menu{
   background: orangered linear-gradient(to bottom, orange, orangered, orange);
   box-shadow: 0 -5px 0 0 #121212; /*색 안 주면 글자색 읽음*/
-  color: #f5f5f6;
+  color: #000;
   display: flow-root;
   padding-left: 255px;
   padding-inline-start: 255px;
@@ -20,6 +20,32 @@ body{
   > li{
     float:left; /*서브메뉴는 그대로 세로******복습********/
     border-left: 2px solid #fff; /*버튼에다가 선이 있으면 클릭될 수가 있음. 그래서 li에 넣음*/
+  }
+
+  > li.is--active {
+    button{
+      color: yellow;
+      border-bottom: 2px solid #000;
+
+      &::after{
+        content: "";
+        background: #000;
+        display: block;
+        height: 1px;
+        block-size: 1px;
+      }
+    }
+
+    ul{
+      display: none;
+      position: absolute;  
+      /* 버튼에 붙으라고? */
+      /*ul에 pos:absoulte 주는 이유가 뭐지?*/
+    }
+
+    li{
+      display: inline-block;
+    }
   }
 
   button{
@@ -35,12 +61,24 @@ body{
     /*depth가 깊은 그림자*/
     /* text-shadow: 1px 1px 0 #000 , -1px -1px 0 #000;  */
     /* 윤곽효과 */
+
+    
   }
+
+/* 
+  button[aria-expanded="true"]{
+    color: lime;
+  } */
   
   ul{
     display: none;
+    position:absolute;
   }
 
   
+ul[aria-hidden="false"]{
+  /* display:block;  */
 }
+/* display:block을 넣으면 왜 갑자기 리스트가 보여? */
 
+}
