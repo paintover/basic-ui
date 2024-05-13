@@ -1,0 +1,56 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+.tab-list {
+  /* background-color: yellow; */
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 0.8rem;
+
+ .tab{
+  border: 1px solid gray;
+  padding: 0.6rem 1rem;
+  background-color: lightgray;
+  border-radius: 0.5rem 0.5rem 0 0;
+  color: gray;
+}
+
+  .is-selected {
+    background-color: white;
+    border: 1px solid orangered;
+    color: orangered;
+  }
+}
+
+.tab-panel{
+  /* background-color: orange; */
+  display: flex;
+  flex-flow: column nowrap;
+  display: none;
+  gap: 0.3125rem;
+
+  .tab-panel-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &.is-selected{
+    display: flex;
+}
+
+ span{
+  padding-right: 0.3125rem;
+ }
+}
+
+.tabs{
+  position: relative;
+
+  .tab-more {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
