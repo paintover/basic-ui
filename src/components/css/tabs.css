@@ -1,0 +1,90 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+body, h1 {
+  margin: 20px;
+}
+
+
+.tabs{
+  background: yellow;
+  width: 50%;
+  inline-size: 50%;
+  position: relative;
+
+  /* &:has(.is-selected){
+    .tab-panel{
+      background-color: blue;
+    }
+  } */
+  /* tabs 안에 .is-selcted가 있을 때 */
+}
+
+/* 탭 컴포넌트 */
+.tab{
+  border: 1px solid gray;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem 0.25rem 0 0;
+  color: gray;
+  background-color: #eee;
+  
+  &.is-selected{
+    border-color: currentColor currentColor white currentColor;
+    color: orangered;
+    background-color: white;
+  }
+}
+
+/* 탭 컴포넌트 그룹 */
+.tab-list{
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+/* 탭 패널 */
+.tab-panel{
+  padding-top: 24px;
+  /* background-color: pink; */
+  display: none;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+
+  &.is-selected {
+    display: flex;
+ }
+  
+  .tab-panel-item {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+
+    a{
+      /* display: flex; */
+      /* flex-flow: row nowrap;
+      gap: 0.5rem; */
+      /* background: lime; */
+      flex: 1 1 auto;
+      /* flex contatiner가 되면 말줄임표가 적용이 안된다고 함.  */
+
+      /******** 이거 세 줄이 세트로 같이 다닌다고 함 *********/
+      overflow: hidden; 
+      /*넘치면 없애줘*/
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      /*줄바꿈 금지  */
+    }
+
+    span{
+      flex: 0 0 auto;
+    }
+  }
+
+  .tab-more{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}

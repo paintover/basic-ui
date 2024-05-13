@@ -1,0 +1,48 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+.pagination {
+  --spacing: 20px;
+
+  /* color: var(--light-blue); */
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: var(--spacing);
+
+  span{
+    color: var(--light-blue);
+  /* 왜 span은 전체로 선택 안되고,  색깔을 따로 줘야해? */
+  }
+
+  div{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--spacing);
+    flex: 1 1 0;
+  }
+
+  button {
+    /* border: 2px solid var(--light-blue); */
+    border: 0;
+    border-radius: 50px 50px;
+    background-color: transparent;
+    flex: 0 0 2rem; /*flex shrink flex-basis(최소값)*/
+
+    a{
+      padding: 0.5rem 1rem;
+      color: red;
+    }
+
+    &.is-selected {
+      font-weight: 700;
+      color: var(--dark-blue);
+    }
+  }
+}
+
+.is-selected {
+  font-weight: 800;
+  color: var(--dark-blue);
+}

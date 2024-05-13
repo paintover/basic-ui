@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>탭 컴포넌트</title>
+  <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="/components/css/tabs.css" />
+</head>
+
+<body>
+  <h1>탭 컴포넌트</h1>
+
+  <div class="tabs">
+    <div class="tab-list" role="tablist">
+      <div class="tab is-selected" role="tab" id="tab1" aria-controls="tabpanel1" aria-selected="true" tabindex="0">공지사항
+      </div>
+      <div class="tab" role="tab" id="tab2" aria-controls="tabpanel2" aria-selected="false" tabindex="0">자료실</div>
+    </div>
+    <!-- 니가 컨트롤 하는 게 tabpanel1이야 -->
+    <!-- 너 지금 선택되어 있어 -->
+    <!-- 키보드 포커스를 받을 수 있도록 -->
+    <!-- 키보드 인터렉션은 자바스크립트로 따로 구현해야 함.  -->
+
+    <div class="tab-panel is-selected" role="tabpanel" aria-labelledby="tab1" id="tabpanel1">
+      <!--이 패널은 공지사항 패널이구나~하고 알려주는 것 -->
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>HTML의 모든것을 알려주마 샘플 활용법</a>
+        <span>2024.04.22</span>
+      </div>
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>HTML의 모든것을 알려주마 샘플 활용법</a>
+        <span>2024.04.22</span>
+      </div>
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>HTML의 모든것을 알려주마 샘플 활용법</a>
+        <span>2024.04.22</span>
+      </div>
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>HTML의 모든것을 알려주마 샘플 활용법</a>
+        <span>2024.04.22</span>
+      </div>
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>HTML의 모든것을 알려주마 샘플 활용법</a>
+        <span>2024.04.22</span>
+      </div>
+      <a href="/" class="tab-more"><span class="fas fa-plus"></span>더보기</a>
+    </div>
+
+    <div class="tab-panel" role="tabpanel" aria-labelledby="tab2" id="tabpanel2"> <!--이 패널은 자료실 패널이구나~하고 알려주는 것 -->
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>웹접근성 향상을 위한 HTML 마크업</a>
+        <span>2024.04.22</span>
+      </div>
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>웹접근성 향상을 위한 HTML 마크업</a>
+        <span>2024.04.22</span>
+      </div>
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>웹접근성 향상을 위한 HTML 마크업</a>
+        <span>2024.04.22</span>
+      </div>
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>웹접근성 향상을 위한 HTML 마크업</a>
+        <span>2024.04.22</span>
+      </div>
+      <div class="tab-panel-item">
+        <a href="/"><span class="fas fa-circle-dot"></span>웹접근성 향상을 위한 HTML 마크업</a>
+        <span>2024.04.22</span>
+      </div>
+      <a href="/" class="tab-more"><span class="fas fa-plus"></span>더보기</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
