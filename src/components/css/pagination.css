@@ -13,14 +13,16 @@
 
   span{
     color: var(--light-blue);
-  /* 왜 span은 전체로 선택 안되고,  색깔을 따로 줘야해? */
+  /* 왜 span은 전체로 선택 안되고,  색깔을 따로 줘야해
+  ? -> font awesome이라서! font awesome은 상속받지 않고 그 font의 스타일을 따름 */
   }
 
   div{
     display: flex;
     flex-flow: row nowrap;
     gap: var(--spacing);
-    flex: 1 1 0;
+    flex: 1 1 0; 
+    /* flex : 확대 축소 flex-basis(최솟값)  */
   }
 
   button {
