@@ -1,0 +1,51 @@
+@import url(/style/reset.css);
+@import url(/style/theme.css);
+@import url(/style/base.css);
+
+.card{
+  display: flex;
+  flex-flow: column nowrap;
+  /* width: 300px; */
+  box-shadow: 0 0 0.25rem 0 rgba(0,0,0,0.5);
+  gap: 10px;
+
+  h2, p, ul{
+    padding: 0 1rem;
+  }
+
+figure {
+  order: -1;
+  margin: 0 auto;
+
+  img{
+    max-width: 100%;
+    /* 어떨 때 차이가 있나? */
+    vertical-align: top;
+  }
+
+  h2{
+    margin-left: 10px;
+  }
+
+ p{
+    line-height: 1.5;
+    margin-left: 10px;
+    /* 줄과 줄 사이의 간격 */
+ }
+}
+
+ul{
+  display: flex;
+  flex-flow: row wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+  font-size: 0.625rem;
+
+  li {
+    background-color: lightgray;
+    border-radius: 10px;
+    padding: 0.25rem 0.5rem;
+    flex: 0 0 auto;
+  }
+ }
+}
