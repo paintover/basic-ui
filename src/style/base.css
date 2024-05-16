@@ -1,8 +1,8 @@
 /* @import url(../style/theme.css); */
 
 :root{
-  --base-font-famaily: "SUIT Variable", sans-serif; 
-} 
+  --base-font-family: "SUIT Variable", sans-serif; 
+}
 
 body *, body *::before, body *::after{
   box-sizing: border-box;
@@ -11,14 +11,13 @@ body *, body *::before, body *::after{
 body{
   font-family: var(--base-font-family);
   line-height: 1.15;
+  margin: 0;
 }
 
-/* 
 *:focus{
   outline: 0;
-} */
-/* 아웃라인은 상자 크기에 영향을 주지 않음. border와는 달리 */
+}
 
-/* *:focus-visible{
-  outline: 2px solid green;
-} */
+*:focus-visible{
+  outline: 2px solid #24388D;
+}
