@@ -1,5 +1,5 @@
 @import url(/style/reset.css);
-@import url(/style/theme.css); 
+@import url(/style/theme.css);
 @import url(/style/base.css);
 
 /* input 컴포넌트 */
@@ -10,43 +10,43 @@
   border-bottom: 1px solid #fff;
 
   display: flex;
-  flex-flow: row nowrap; /*label과 input이 가로로 정렬됨*/
+  flex-flow: row nowrap;
   gap: var(--spacing);
-  align-items: center; /*수직방향으로 정렬하기 -> flex 속성 중 하나*/
+  align-items: center;
 
   label{
-    white-space: nowrap; /*텍스트가 길어서 넘어가더라도 자동 줄바꿈 일어나지 말라고*/
+    white-space: nowrap;
   }
 
   input{
-    flex-grow:1; /*인풋태그가 화면에 따라 확대됨*/
-    /* border: 1px solid var(--border-color) */
+    flex-grow: 1;
+    /* border: 1px solid var(--border-color); */
     border: 0;
     border-radius: var(--radius);
     padding: 1px 1px 1px 8px;
     height: 24px;
     block-size: 24px;
-    width: 100%  /* 이걸 줘야만, 부모의 width를 상속받을 수 있어. 이걸 안 쓰고 flex-grow로 늘려버리면 부모컨테이너는 가만히 있고 야이만 늘어나. */
+    width: 100%;
   }
 
-  input:focus{
+  input:focus {
     outline: 0;
   }
-
+  
   &:focus-within{
-    border-bottom-color:red;
-    /* 자식 중에 누군가 focus를 받으면 이 부모컨테이너 하단의 border의 색상을 red로 만들어라. */
+    border-bottom-color: red;
   }
 }
 
 
+
 /* button 컴포넌트 */
-.button {
-  --bg-color: var(--orange-200);
+.button{
+  --bg-color:var(--orange-200);
   --color: var(--white);
   --radius: 3px;
 
-  border:0; 
+  border: 0;
   padding: 16px 10px;
   background-color: var(--bg-color);
   color: var(--color);
@@ -54,65 +54,63 @@
   white-space: nowrap;
 }
 
+
+
 /* 링크 텍스트 컴포넌트 (아이콘 유형) */
 .icon-link{
   --color: var(--orange-200);
 
   [class*='fas']{
-    color: var(--color); /*button 컴포넌트에서 선언해준 변수인가?*/
+    color: var(--color);
     padding-right: 0.25em;
     padding-inline-end: 0.25em;
   }
 }
 
-/* 로그인 */
-.login{
   /* 로그인 변수 */
-  --start-color: var(--orange-100);
   --end-color: var(--orange-200);
-  --shadow-color: var(-gray-700);
+  --shadow-color: var(--gray-700);
   --spacing: 10px;
   --radius: 5px;
   --shadow-depth: 5px;
   --bg-color: var(--white);
   --border-color: var(--gray-500);
 
-  background-image: radial-gradient(circle at right top, var(--start-color), var(--end-color));
+  background-image: radial-gradient(circle at right top, var(--start-color,), var(--end-color));
   border-radius: var(--radius);
   padding: var(--spacing);
-  box-shadow: var(--shadow-depth) var(--shadow-depth) 0 0 var(--shadow-color); /*box-shadow : x y 블러 크기 색상 */
+  box-shadow: var(--shadow-depth) var(--shadow-depth) 0 0 var(--shadow-color);
 
-  /* 로그인 제목 */
- .login-title {
-    --color:var(--yellow);
+/* 로그인 제목 */
+.login-title{
+  --color: var(--yellow);
+  
+  color: var(--color);
+  margin: 0;
+  font-size: 0.9375rem;
+}
 
-    color: var(--color);
-    margin: 0;
-    font-size: 0.9375rem;
-  }
-
-  /* 로그인 폼 */
-  .login-form {
-    margin-top: var(--spacing);
-    margin-block-start: var(--spacing);
-    background-color: var(--bg-color);
-    border-radius: var(--radius) var(--radius) 0 0; /*왜지? 왜 위에만 모서리 둥글게 처리했지?*/
-    padding: var(--spacing);
+/* 로그인 폼 */
+.login-form{
+  margin-top: var(--spacing);
+  margin-block-start: var(--spacing);
+  background-color: var(--bg-color);
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: var(--spacing);
 
     fieldset{
-      border-bottom: 1px solid var(--border-color); 
-      display: flex; /*왜 여기에 display:flex 줬지? 이거 주면 아이디랑 비밀번호도 다 가로정렬되지 않나? 아이디랑 비밀번호는 세로나열 되어야 하잖아*/
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
       flex-flow: row nowrap;
       gap: var(--spacing);
       padding-bottom: var(--spacing);
       padding-block-end: var(--spacing);
     }
-    /*왜 login-form에다가 안 주고 굳이 fieldset을 만든거지?*/
 
     .login-input-group{
       flex-grow: 1;
       display: flex;
-      flex-flow: column nowrap; /*다시 label&input 각각 세로 정렬*/
+      flex-flow: column nowrap;
       gap: var(--spacing);
 
       label{
@@ -120,15 +118,15 @@
         min-inline-size: 4em;
       }
     }
+
   }
 
-  /* 멤버 서비스 관련 링크 */
+  
   .member-sign{
-    background-color: var(--bg-color);
     border-radius: 0 0 var(--radius) var(--radius);
     padding: 0 var(--spacing) var(--spacing) var(--spacing);
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
   }
-}
+
