@@ -1,0 +1,92 @@
+@import url(/style/reset.css);
+@import url(/style/base.css);
+@import url(/theory/css/grid.css);
+
+/* 스프라이트 이미지 */
+.sprite{
+  height: 60px;
+  background: url(/images/sprite_main.png) no-repeat;
+  padding-left: 64px;
+  /* 롸? 이미지에는 패딩이 적용 안되는 구나 */
+}
+
+.sprite-book{
+  background-position: 0 0;
+} 
+.sprite-news{
+  background-position: 0 -230px;
+}
+.sprite-board{
+  background-position: 0 -115px;
+}
+.sprite-favorite{
+  background-position: 0 -345px;
+}
+.sprite-twitter{
+  background-position: 0 -460px;
+}
+
+/* 헤드라인 스타일 */
+.headline{
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* flex 레이아웃 스타일 */
+.flex-items-center{
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  /* flex를 이렇게 본인한테 부여해도 되는 거야? 부모컨테이너가 아니라? 태그가 한개잖아 */
+}
+
+[class^="icon"]{
+  width: 100px;
+  height: 100px;
+}
+
+.svg-icon-search{
+  width: 150px;
+  height: 150px;
+
+  path{
+    fill: red;
+
+    @media (prefers-color-scheme: dark) {
+      fill: blue;
+    }
+  }
+}
+
+/* svg 배경이미지 */
+.plus{
+  width: 100px;
+  height: 100px;
+  /* background-repeat: no-repeat; */
+  /* background-size: 100% 100%; */
+  background-color: blue;
+  mask-image: url(/images/icons/plus.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  /* 마스크 이미지를 통해서 색상 변경 가능 */
+
+  @media (prefers-color-scheme: dark) {
+    background-color: green;
+  }
+}
+
+[role="img"]{
+  width: 100px;
+  height: 100px;
+
+  circle{
+    fill: red;
+  }
+}
+
+.sprite-icon{
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  background-image: url(/images/icons/_sprite.svg#search);
+}

@@ -58,7 +58,7 @@
   background-color: hotpink;
   background-image: url(/images/sprite_main.png);
   background-repeat: no-repeat;
-  text-indent: 65px;
+  /* text-indent: 65px; */
 }
 
 .news .sprite{
